@@ -19,11 +19,15 @@
         <th>Director</th>
         <th>Movie Rating</th>
     </tr>
+    {% for Movie in movie %}
     <tr>
-        <td> {{ title }}</td>
-        <td> {{ director }}</td>
-        <td> {{ rating }}</td>
+        
+        <td> {{ Movie.title }}</td>
+        <td> {{ Movie.director }}</td>
+        <td> {{ Movie.rating }}</td>
+        
     </tr>
+    {% endfor %}
     
 </table>
 
