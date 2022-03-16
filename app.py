@@ -1,5 +1,6 @@
 from flask import Flask, redirect, render_template, request
 from src.repositories.movie_repository import movie_repository_singleton
+from src.models.movie import Movie
 
 app = Flask(__name__)
 
@@ -11,8 +12,11 @@ def index():
 
 @app.get('/movies')
 def list_all_movies():
-    # TODO: Feature 1
-    return render_template('list_all_movies.html', list_movies_active=True)
+    #movies = movie_repository_singleton.get_all_movies()
+    movies = {Movie("Spongebob", "Me",5),
+        Movie( "idk", "steve", 1)}
+
+    return render_template('list_all_movies.html', list_movies_active=True, movie=movies)
 
 
 @app.get('/movies/new')

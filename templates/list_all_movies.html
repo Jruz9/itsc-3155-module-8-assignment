@@ -3,7 +3,32 @@
 {% block title %}Movie Rating App | All Movies{% endblock %}
 
 {% block body %}
+<style>
+    table, th, td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+    
+    
+</style>
 <h1 class="mb-5">All Movies</h1>
 <p class="mb-3">See our list of movie ratings below</p>
-<!-- TODO: Feature 1 -->
+<table>
+    <tr>
+        <th>Movie Name</th>
+        <th>Director</th>
+        <th>Movie Rating</th>
+    </tr>
+    {% for Movie in movie %}
+    <tr>
+        
+        <td> {{ Movie.title }}</td>
+        <td> {{ Movie.director }}</td>
+        <td> {{ Movie.rating }}</td>
+        
+    </tr>
+    {% endfor %}
+    
+</table>
+
 {% endblock %}
